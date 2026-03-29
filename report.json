@@ -1,0 +1,15 @@
+{
+    "target": "10.48.163.86",
+    "open_ports": [
+        22,
+        80
+    ],
+    "directories": [
+        "http://10.48.163.86//admin",
+        "http://10.48.163.86//login",
+        "http://10.48.163.86//dashboard",
+        "http://10.48.163.86//uploads",
+        "http://10.48.163.86//backup"
+    ],
+    "vulnerabilities": []
+}
