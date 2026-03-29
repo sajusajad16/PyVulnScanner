@@ -34,3 +34,26 @@ A Python-based Web Vulnerability Scanner designed to detect common web vulnerabi
 
 ```bash
 python main.py
+---
+
+## 📸 Screenshots
+
+### 🔍 Scanner Running
+![Scanner](screenshots/scan.png)
+
+### 📊 Scan Results
+![Results](screenshots/result.png)
+
+---
+
+## ⚠️ Disclaimer
+
+This tool is created for educational purposes only.  
+Do not use it on unauthorized systems.
+
+---
+
+## 👨‍💻 Author
+
+Muhammed Sajad  
+Cybersecurity Student | Ethical Hacking | SOC Analyst Aspirant
