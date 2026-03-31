@@ -1,0 +1,3 @@
+testphp.vulnweb.com
+scanme.nmap.org
+example.com
