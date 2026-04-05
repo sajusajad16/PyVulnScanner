@@ -1,59 +1,89 @@
 # 🔐 PyVulnScanner
 
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Status](https://img.shields.io/badge/Status-Active-success)
-![License](https://img.shields.io/badge/License-Educational-orange)
-
-A Python-based Web Vulnerability Scanner designed to detect common web vulnerabilities such as SQL Injection and Cross-Site Scripting (XSS).
+Advanced Web Vulnerability Scanner built using Python.
 
 ---
 
 ## 🚀 Features
 
-- 🕷️ Web Crawling  
-- 💉 SQL Injection Detection  
-- ⚡ XSS Detection  
-- 🔐 Form-Based Scanning (GET & POST)  
-- 📂 Directory Enumeration  
-- 🛡️ Security Header Analysis  
-- 🌐 Port Scanning  
-- ⚡ Multi-threaded scanning  
-- 📄 Report generation  
+* 🕷️ Web Crawling
+* 💉 SQL Injection Detection
+* ⚡ XSS Detection
+* 🔐 Security Headers Analysis
+* 📂 Directory Enumeration
+* 🌐 Port Scanning
 
 ---
 
-## 🛠️ Technologies Used
+## 📦 Installation
 
-- Python  
-- Requests  
-- BeautifulSoup  
+```bash
+git clone https://github.com/sajusajad16/PyVulnScanner.git
+cd PyVulnScanner/scanner
+```
+
+### 🔹 Create Virtual Environment
+
+```bash
+python3 -m venv venv
+source ../venv/bin/activate
+```
+
+### 🔹 Install Requirements
+
+```bash
+pip install -r ../ReconX/requirements.txt
+```
 
 ---
 
 ## ▶️ Usage
 
+Run the scanner:
+
 ```bash
 python main.py
+```
+
+Enter the target URL when prompted:
+
+```bash
+http://example.com
+```
+
 ---
 
-## 📸 Screenshots
+## 🧪 Example
 
-### 🔍 Scanner Running
-![Scanner](screenshots/scan.png)
+```bash
+Enter target URL: http://testphp.vulnweb.com
+```
 
-### 📊 Scan Results
-![Results](screenshots/result.png)
+---
+
+## 📊 Output
+
+The tool performs:
+
+* Port scanning
+* Crawling
+* Vulnerability testing (SQLi & XSS)
+* Header analysis
+* Directory scanning
 
 ---
 
 ## ⚠️ Disclaimer
 
-This tool is created for educational purposes only.  
+This tool is created for **educational purposes only**.
 Do not use it on unauthorized systems.
 
 ---
 
 ## 👨‍💻 Author
 
-Muhammed Sajad  
-Cybersecurity Student | Ethical Hacking | SOC Analyst Aspirant
+Muhammed Sajad
+Cybersecurity Researcher
+
+GitHub: https://github.com/sajusajad16
+LinkedIn: https://www.linkedin.com/in/muhammed-sajad-a8854b375/
