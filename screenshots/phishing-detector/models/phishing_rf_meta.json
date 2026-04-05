@@ -1,0 +1,7 @@
+{
+  "trained_at": "2026-03-31T10:24:30.825647",
+  "samples": 85,
+  "accuracy": 1.0,
+  "model_type": "RandomForestClassifier",
+  "features": 24
+}

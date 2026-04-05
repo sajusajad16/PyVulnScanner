@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  phishguard:
+    build: .
+    container_name: phishguard-ai
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+      - ./models:/app/models
+    environment:
+      - FLASK_ENV=production
+      - SECRET_KEY=change-me-in-production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request; urllib.request.urlopen('http://localhost:5000/api/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

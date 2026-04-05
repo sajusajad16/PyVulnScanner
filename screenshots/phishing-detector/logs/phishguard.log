@@ -1,0 +1,70 @@
+2026-03-31 15:54:48,286 [INFO] phishguard: 🚀 PhishGuard AI starting …
+2026-03-31 15:54:48,286 [INFO] model: Loading existing model from /home/arshad/project /phishing-detector/phishing-detector/models/phishing_rf.pkl
+2026-03-31 15:54:49,001 [INFO] phishguard: ML model loaded into cache.
+2026-03-31 15:54:49,001 [INFO] phishguard: ✅ ML model ready
+2026-03-31 15:54:49,011 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2026-03-31 15:54:49,011 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-03-31 15:54:49,011 [INFO] werkzeug:  * Restarting with stat
+2026-03-31 15:54:49,120 [INFO] phishguard: 🚀 PhishGuard AI starting …
+2026-03-31 15:54:49,120 [INFO] model: Loading existing model from /home/arshad/project /phishing-detector/phishing-detector/models/phishing_rf.pkl
+2026-03-31 15:54:49,789 [INFO] phishguard: ML model loaded into cache.
+2026-03-31 15:54:49,790 [INFO] phishguard: ✅ ML model ready
+2026-03-31 15:54:49,794 [WARNING] werkzeug:  * Debugger is active!
+2026-03-31 15:54:49,799 [INFO] werkzeug:  * Debugger PIN: 146-001-968
+2026-03-31 15:55:06,119 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 15:55:06] "GET / HTTP/1.1" 200 -
+2026-03-31 15:55:06,159 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 15:55:06] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-31 15:55:06,161 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 15:55:06] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-03-31 15:55:06,531 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 15:55:06] "GET /api/health HTTP/1.1" 200 -
+2026-03-31 15:55:06,653 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 15:55:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-31 15:55:18,309 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 15:55:18] "GET / HTTP/1.1" 200 -
+2026-03-31 15:55:18,343 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 15:55:18] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-03-31 15:55:18,346 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 15:55:18] "GET /static/js/app.js HTTP/1.1" 200 -
+2026-03-31 15:55:18,808 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 15:55:18] "GET /api/health HTTP/1.1" 200 -
+2026-03-31 15:55:19,003 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 15:55:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-31 15:56:31,971 [INFO] phishguard: Email scan requested (20 chars)
+2026-03-31 15:56:31,996 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 15:56:31] "POST /api/scan-email HTTP/1.1" 200 -
+2026-03-31 15:56:42,349 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 15:56:42] "POST /api/report HTTP/1.1" 200 -
+2026-03-31 15:56:55,453 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 15:56:55] "POST /api/report HTTP/1.1" 200 -
+2026-03-31 15:58:25,970 [INFO] phishguard: URL scan requested: https://chatgpt.com/
+2026-03-31 15:58:26,059 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 15:58:26] "POST /api/scan-url HTTP/1.1" 200 -
+2026-03-31 15:59:53,418 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 15:59:53] "POST /api/report HTTP/1.1" 200 -
+2026-03-31 15:59:59,448 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 15:59:59] "POST /api/report HTTP/1.1" 200 -
+2026-03-31 16:01:18,237 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 16:01:18] "GET /api/docs HTTP/1.1" 200 -
+2026-03-31 16:01:28,697 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 16:01:28] "GET /api/history?limit=20 HTTP/1.1" 200 -
+2026-03-31 16:01:30,131 [INFO] werkzeug: 192.168.1.3 - - [31/Mar/2026 16:01:30] "GET /api/history?limit=20 HTTP/1.1" 200 -
+2026-03-31 16:10:39,672 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:10:39] "GET /api/history?limit=20 HTTP/1.1" 200 -
+2026-03-31 16:11:32,591 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:32] "GET / HTTP/1.1" 200 -
+2026-03-31 16:11:32,624 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-31 16:11:32,628 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:32] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-31 16:11:32,638 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:32] "GET /api/health HTTP/1.1" 200 -
+2026-03-31 16:11:32,887 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:32] "GET / HTTP/1.1" 200 -
+2026-03-31 16:11:32,921 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-31 16:11:32,923 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:32] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-31 16:11:32,951 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:32] "GET /api/health HTTP/1.1" 200 -
+2026-03-31 16:11:33,442 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "GET / HTTP/1.1" 200 -
+2026-03-31 16:11:33,473 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-31 16:11:33,474 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-31 16:11:33,484 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "GET /api/health HTTP/1.1" 200 -
+2026-03-31 16:11:33,605 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "GET / HTTP/1.1" 200 -
+2026-03-31 16:11:33,642 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-31 16:11:33,650 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-31 16:11:33,659 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "GET /api/health HTTP/1.1" 200 -
+2026-03-31 16:11:33,787 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "GET / HTTP/1.1" 200 -
+2026-03-31 16:11:33,824 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-31 16:11:33,825 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-31 16:11:33,835 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "GET /api/health HTTP/1.1" 200 -
+2026-03-31 16:11:33,967 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:33] "GET / HTTP/1.1" 200 -
+2026-03-31 16:11:34,002 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:34] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-31 16:11:34,003 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-31 16:11:34,013 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:34] "GET /api/health HTTP/1.1" 200 -
+2026-03-31 16:11:34,183 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:34] "GET / HTTP/1.1" 200 -
+2026-03-31 16:11:34,214 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-31 16:11:34,218 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:34] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-31 16:11:34,241 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:34] "GET /api/health HTTP/1.1" 200 -
+2026-03-31 16:11:34,361 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:34] "GET / HTTP/1.1" 200 -
+2026-03-31 16:11:34,395 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-03-31 16:11:34,398 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:34] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2026-03-31 16:11:34,415 [INFO] werkzeug: 127.0.0.1 - - [31/Mar/2026 16:11:34] "GET /api/health HTTP/1.1" 200 -
