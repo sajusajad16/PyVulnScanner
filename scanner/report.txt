@@ -263,3 +263,12 @@
 [FORM XSS] Possible: http://demo.testfire.net/Documents/JohnSmith/index.jsp?content=personal_cards.htm
 [FORM XSS] Possible: http://demo.testfire.net/index.jsp?content=inside_volunteering.htm#time
 [FORM XSS] Possible: http://demo.testfire.net/Documents/JohnSmith/index.jsp?content=personal_cards.htm
+[PORT] Open: 10.48.128.108:21
+[PORT] Open: 10.48.128.108:22
+[PORT] Open: 10.48.128.108:80
+[PORT] Open: 10.48.128.108:21
+[PORT] Open: 10.48.128.108:22
+[PORT] Open: 10.48.128.108:80
+[PORT] Open: 10.48.128.108:21
+[PORT] Open: 10.48.128.108:22
+[PORT] Open: 10.48.128.108:80
