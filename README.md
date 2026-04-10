@@ -1,5 +1,5 @@
-# 🔐 PyVulnScanner
 
+<<<<<<< HEAD
 Advanced Web Vulnerability Scanner built using Python.
 
 ---
@@ -87,3 +87,5 @@ Cybersecurity Researcher
 
 GitHub: https://github.com/sajusajad16
 LinkedIn: https://www.linkedin.com/in/muhammed-sajad-a8854b375/
+=======
+>>>>>>> bc7aeefc6ba0bc6169b4586d14b6b2bde6c006f4
